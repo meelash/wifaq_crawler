@@ -1,0 +1,33 @@
+{
+  "name": "wifaq_crawler",
+  "version": "1.0.0",
+  "description": "A small node.js program that crawls the results page of wifaqulmadaris to get the ilhaq numbers of all madrasas.",
+  "main": "main.js",
+  "dependencies": {
+    "json2csv": "^3.4.2",
+    "request": "^2.72.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meelash/wifaq_crawler.git"
+  },
+  "keywords": [
+    "crawler",
+    "wifaq",
+    "pakistan",
+    "madrasa",
+    "exam",
+    "results",
+    "ilhaq"
+  ],
+  "author": "Saleem Abdul Hamid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meelash/wifaq_crawler/issues"
+  },
+  "homepage": "https://github.com/meelash/wifaq_crawler#readme"
+}
