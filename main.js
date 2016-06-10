@@ -40,7 +40,7 @@ var makeRequest = (ilhaqNumber) => {
 }
 
 while (ilhaqNumber < totalCount) {
-  makeRequest(ilhaqNumber);
+  ((num) => {setTimeout(()=>{makeRequest(num);}, num * 100);})(ilhaqNumber)
   
   ilhaqNumber++;
 }
