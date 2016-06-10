@@ -6,7 +6,7 @@ var urlStart = "http://www.wifaqulmadaris.org/_reports/gazett-madaris.php?gender
 var urlEnd = "&Submit=";
 
 var ilhaqNumber = 00000;
-var totalCount = 1000;
+var totalCount = 100000;
 var list = []
 var returnCount = 0;
 
