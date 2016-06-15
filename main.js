@@ -8,7 +8,7 @@ var urlEnd = "&Submit=";
 
 var ilhaqNumber = 00000;
 // var totalCount = 100;
-var totalCount = 100000;
+var totalCount = 18000; // running with 100000 showed only schools up to 17970 in 2016
 var list = []
 var returnCount = 0;
 
