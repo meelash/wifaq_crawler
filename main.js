@@ -14,6 +14,7 @@ var returnCount = 0;
 
 console.log('starting');
 
+// Build URL for the given ilhaqNumber, and request the page from it. Parse the page to extract the relevant data and push it to the list of schools. As requests come back check if they have all come back yet or not.
 var makeRequest = (ilhaqNumber) => {
   var req = request({ uri: urlStart + ilhaqNumber + urlEnd, timeout: 120000 }, (error, response, body) => {
     if (error) {
@@ -42,12 +43,7 @@ var makeRequest = (ilhaqNumber) => {
   // console.log(req);
 }
 
-while (ilhaqNumber < totalCount) {
-  ((num) => {setTimeout(()=>{makeRequest(num);}, num * 100);})(ilhaqNumber)
-  
-  ilhaqNumber++;
-}
-
+// Take list of schools, build csv out of it and write to disk.
 var onEnd = () => {
   json2csv({ data: list, fields: ['ilhaqNumber', 'name', 'address', 'province'] }, function(err, csv) {
     if (err) console.log(err);
@@ -57,3 +53,12 @@ var onEnd = () => {
     });
   });
 };
+
+// Main loop
+while (ilhaqNumber < totalCount) {
+  
+  // The timeout lessens the load on the remote server which would cause connection dropping and failure to reach the IP, etc. Also, makes it possible to run the script without increase the max number of open file descriptors since all the requests don't queue up at once.
+  ((num) => {setTimeout(()=>{makeRequest(num);}, num * 100);})(ilhaqNumber)
+  
+  ilhaqNumber++;
+}
